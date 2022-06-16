@@ -43,11 +43,7 @@ Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(1)
         -- Checks if mask is worn
-		if Config.defaultmask == GetPedDrawableVariation(PlayerPedId(), 1) then
-			wearingMask = true
-		else
-			wearingMask = false
-		end
+		wearingMask = Config.defaultmask == GetPedDrawableVariation(PlayerPedId(), 1)
 
         -- If Mask is worn, makes invincible to gas and prints notification
 		if wearingMask then
