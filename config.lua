@@ -1,8 +1,9 @@
---================================--
---          GASMASK v2.5          --
---          by JellyJam           --
---      License: GNU GPL 3.0      --
---================================--
+--==================================--
+--           GASMASK v2.5           --
+--           by JellyJam            --
+-- Forked and edited by theskiratta --
+--       License: GNU GPL 3.0.      --
+--==================================--
 
 Config = {}
 
