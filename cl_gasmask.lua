@@ -37,7 +37,7 @@ end
 
 -- Checks if given value is in table from config
 function IsValidMask(val)
-    for index, value in ipairs(Config.masklist) do
+    for _, value in ipairs(Config.masklist) do
         if value == val then
             return true
         end
