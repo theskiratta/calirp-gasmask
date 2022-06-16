@@ -5,8 +5,7 @@
 --       License: GNU GPL 3.0.      --
 -- ==================================--
 -- FUNCTIONS
-GasMaskOn = false
-WearingMask = false
+GasMaskOn, WearingMask = false
 
 function notify(string)
     SetNotificationTextEntry("STRING")
