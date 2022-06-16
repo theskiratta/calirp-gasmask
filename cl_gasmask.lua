@@ -16,6 +16,7 @@ function notify(string)
     DrawNotification(true, false)
 end
 
+-- Plays putting on mask emote
 local function PlayEmote()
     local playerped = GetPlayerPed(-1)
     RequestAnimDict('mp_masks@standard_car@ds@')
@@ -36,6 +37,15 @@ function Draw2DText(x, y, text, scale, r, g, b, a)
     DrawText(x, y)
 end
 
+-- Checks if given value is in table from config
+function IsValidMask(val)
+    for index, value in ipairs(Config.masklist) do
+        if value == val then
+            return true
+        end
+    end
+    return false
+end
 
 -- WEARING MASK 
 
@@ -43,7 +53,8 @@ Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(1)
         -- Checks if mask is worn
-		if Config.defaultmask == GetPedDrawableVariation(PlayerPedId(), 1) then
+        CurrentMaskID = GetPedDrawableVariation(PlayerPedId(),1)
+		if IsValidMask(CurrentMaskID) then
 			wearingMask = true
 		else
 			wearingMask = false
