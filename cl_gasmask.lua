@@ -96,7 +96,7 @@ RegisterCommand("gasmask", function(Source, args, rawCommand)
             SetEntityProofs(playerped, false, false, false, false, false, false, false, false, false)
             PlayEmote()
             SetPedComponentVariation(PlayerPedId(), 1, 0, 0, 1)
-            notify("Gasmask ~r~unequipped")
+            notify("Gasmask ~r~removed")
         else 
         	notify("Your mask ~w~is already ~r~off")
     	end
@@ -114,7 +114,7 @@ RegisterCommand("gasmask", function(Source, args, rawCommand)
             SetEntityProofs(playerped, false, false, false, false, false, false, false, false, false)
             PlayEmote()
             SetPedComponentVariation(PlayerPedId(), 1, 0, 0, 1)
-            notify("Gasmask ~r~unequipped")
+            notify("Gasmask ~r~removed")
         end
    	else
     	notify("This command is not recognized")
