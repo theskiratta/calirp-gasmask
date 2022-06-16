@@ -1,5 +1,5 @@
 # FiveM Gask Mask Script v2.5
-a FiveM gas mask script using the ACE permission system.
+A FiveM gas mask script.
 
 ## Description
 By wearing a gasmask (configurable in the config) you become immune to tear gas. 
@@ -22,14 +22,16 @@ https://i.gyazo.com/74d939211e350472aeac709fb4e5feb5.mp4
 https://i.gyazo.com/03e2d847fcadf741a61db0f5d4dd0a60.mp4
 
 ## Installation
-* Assign the ace perm `perms.gasmask` to a specific group or steam identifier. 
-*Find more info on this* [here](https://docs.badger.store/fivem-general-help/ace-permissions)
 * Drop the **fivemgasmask-master** folder in your resources directory
 * Open the `config.lua` file in **fivemgasmask-master** and set things to your liking
 * Add `start fivemgasmask-master` to your **server.cfg**
 * Restart server
 
-**IMPORTANT NOTE:** This script uses ace permissions. You **MUST** assign a group or steam identifier the `perms.gasmask` permission in order for this to work.
+## Changes in Fork:
+* Removed ACE permissions, as anyone should be able to be protected from gas
+* Renamed client.lua to cl_gasmask.lua
+* Replaced __resource.lua with fxmanifest in accordance with Cfx.re guidance
+* Some formatting changes in cl_gasmask.lua
 
 ## Improvements in v2.5
 * Using ace_perms now. (Find older versions [here](https://github.com/JellyJamm/fivemgasmask/releases))
