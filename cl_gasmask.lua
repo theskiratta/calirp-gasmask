@@ -43,7 +43,7 @@ Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(1)
         -- Checks if mask is worn
-		if Config.mask == GetPedDrawableVariation(PlayerPedId(), 1) then
+		if Config.defaultmask == GetPedDrawableVariation(PlayerPedId(), 1) then
 			wearingMask = true
 		else
 			wearingMask = false
@@ -84,7 +84,7 @@ RegisterCommand("gasmask", function(Source, args, rawCommand)
        	    local playerped = GetPlayerPed(-1)
        		SetEntityProofs(playerped, false, false, false, false, false, false, true, true, false)
             PlayEmote()              
-            SetPedComponentVariation(PlayerPedId(), 1, Config.mask, 0, 1)
+            SetPedComponentVariation(PlayerPedId(), 1, Config.defaultmask, 0, 1)
        	    notify("Gasmask ~g~equipped")
         else
         	notify("Your mask ~w~is already ~g~on")
@@ -106,7 +106,7 @@ RegisterCommand("gasmask", function(Source, args, rawCommand)
             local playerped = GetPlayerPed(-1)
             SetEntityProofs(playerped, false, false, false, false, false, false, true, true, false)
             PlayEmote()
-            SetPedComponentVariation(PlayerPedId(), 1, Config.mask, 0, 1)
+            SetPedComponentVariation(PlayerPedId(), 1, Config.defaultmask, 0, 1)
             notify("Gasmask ~g~equipped")
         else
             gasMaskOn = false

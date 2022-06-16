@@ -7,7 +7,12 @@
 
 Config = {}
 
-Config.mask = 46 -- (46 by default) Change this to whichever mask you want to be equipped when using the command
+Config.defaultmask = 46 -- (46 by default) Change this to whichever mask you want to be equipped when using the command
+
+Config.masklist = {
+    46,
+    47
+}
 
 Config.showhud = true -- Change to false if you do not want the status of the gasmask to be shown on the HUD
 
