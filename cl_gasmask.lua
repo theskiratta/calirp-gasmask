@@ -7,7 +7,7 @@
 
 -- FUNCTIONS
 
-gasMaskOn = false
+GasMaskOn = false
 wearingMask = false
 
 function notify(string)
@@ -58,19 +58,19 @@ Citizen.CreateThread(function()
 
         -- If Mask is worn, makes invincible to gas and prints notification
 		if wearingMask then
-			gasMaskOn = true
+			GasMaskOn = true
        	    local playerped = GetPlayerPed(-1)
        	    SetEntityProofs(playerped, false, false, false, false, false, false, true, true, false)
        	    if Config.showhud then
          	    Draw2DText(Config.hudx, Config.hudy, "~w~Gasmask: ~g~Equipped", Config.hudscale, 255, 255, 255, 255);
          	end
             else
-         	    gasMaskOn = false
+         	    GasMaskOn = false
          	    SetPedComponentVariation(PlayerPedId(), 1, 0, 0, 1)
          	    notify("You are not ~b~certified ~w~to wear this!")
             end
         elseif not wearingMask then
-      	    gasMaskOn = false
+      	    GasMaskOn = false
         	local playerped = GetPlayerPed(-1)
         	SetEntityProofs(playerped, false, false, false, false, false, false, false, false, false)
         	--if isAllowed ~= false and isAllowed == true then
@@ -86,8 +86,8 @@ end)
 
 RegisterCommand("gasmask", function(Source, args, rawCommand)
 	if args[1] == "on" then
-      	if not gasMaskOn then
-       	  	gasMaskOn = true
+      	if not GasMaskOn then
+       	  	GasMaskOn = true
        	    local playerped = GetPlayerPed(-1)
        		SetEntityProofs(playerped, false, false, false, false, false, false, true, true, false)
             PlayEmote()              
@@ -97,8 +97,8 @@ RegisterCommand("gasmask", function(Source, args, rawCommand)
         	notify("Your mask ~w~is already ~g~on")
         end
     elseif args[1] == "off" then
-    	if gasMaskOn then
-            gasMaskOn = false
+    	if GasMaskOn then
+            GasMaskOn = false
             local playerped = GetPlayerPed(-1)
             SetEntityProofs(playerped, false, false, false, false, false, false, false, false, false)
             PlayEmote()
@@ -108,15 +108,15 @@ RegisterCommand("gasmask", function(Source, args, rawCommand)
         	notify("Your mask ~w~is already ~r~off")
     	end
     elseif args[1] == nil then
-    	if not gasMaskOn then
-            gasMaskOn = true
+    	if not GasMaskOn then
+            GasMaskOn = true
             local playerped = GetPlayerPed(-1)
             SetEntityProofs(playerped, false, false, false, false, false, false, true, true, false)
             PlayEmote()
             SetPedComponentVariation(PlayerPedId(), 1, Config.defaultmask, 0, 1)
             notify("Gasmask ~g~equipped")
         else
-            gasMaskOn = false
+            GasMaskOn = false
             local playerped = GetPlayerPed(-1)
             SetEntityProofs(playerped, false, false, false, false, false, false, false, false, false)
             PlayEmote()
